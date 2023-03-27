@@ -12,7 +12,6 @@ ticker_option = st.sidebar.selectbox(
     'Pick a stock',
      tickers)
 
-# Add a slider to the sidebar:
 date_slider = st.sidebar.select_slider(
      'Select a period ',
    options=['1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'],
