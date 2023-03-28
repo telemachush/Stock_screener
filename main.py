@@ -3,7 +3,7 @@ import yfinance as yf
 import pandas as pd
 import plotly.graph_objects as go
 
-st.title('Stock screener.')
+st.title('Stock screener')
 st.header('Access over 6000 different stock data!')
 
 tickers = pd.read_csv('data/tickers.csv')
@@ -17,9 +17,9 @@ date_slider = st.sidebar.select_slider(
    options=['1d','5d','1mo','3mo','6mo','1y','2y','5y','10y','ytd','max'],
    value='6mo')
 
-'You selected:', ticker_option, ' stock for', date_slider
+st.subheader(f'You have selected: {ticker_option} stock for {date_slider}')
 
-@st.cache
+@st.cache_data
 def load_data(ticker_option, date_slider):
     return yf.download(ticker_option, period = date_slider)
 
